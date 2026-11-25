@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#112d32"><title>Fleet Desk · Expansion planner</title>
+<link rel="stylesheet" href="./style.css"></head>
+<body>
+<header><div class="top"><div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Fleet Desk</div><span class="divider"></span><span class="descriptor">Mobility operations</span><span class="sample"><i></i> Demo workspace</span></div></header>
+<main>
+<div class="mast"><div><div class="eyebrow">FLEET OPERATIONS</div><h1 id="title">Expansion planner</h1><p id="subtitle">Model a city rollout against hub capacity and daily operating costs.</p></div><div class="city"><label for="city">City workspace</label><select id="city"></select></div></div>
+<nav aria-label="Workspace"><button class="tab current" id="planTab">Launch planning</button><button class="tab" id="fieldTab">Field work <span id="jobCount"></span></button></nav>
+<section id="planning">
+<div class="scenario"><div><div class="eyebrow light">DEPLOYMENT SCENARIO</div><h2 id="scenarioTitle"></h2><p id="baseline"></p></div><div class="scale"><label for="scale">Fleet multiplier <output id="mult"></output></label><input id="scale" type="range" min="1" max="10" step="1"><div class="ends"><span>1× baseline</span><span>10× expansion</span></div></div></div>
+<div class="metrics" id="metrics"></div>
+<div class="grid"><article><div class="sectionhead"><div><div class="eyebrow">INFRASTRUCTURE</div><h2>Hub capacity</h2></div><button id="size" class="secondary">Size to target</button></div><p class="hint">Adjust resources to see how many scooters each team can support.</p><div id="resources"></div></article>
+<aside><div class="eyebrow">LAUNCH DECISION</div><h2 id="decision"></h2><p id="reason"></p><div class="gates" id="gates"></div><button id="workBtn" class="secondary">Review field work</button></aside></div>
+<details><summary>Model assumptions and daily costs</summary><div id="assumptions"></div></details></section>
+<section id="field" hidden><div class="grid workgrid"><article><div class="eyebrow">SERVICE NETWORK</div><h2 id="queueTitle"></h2><p class="hint">Assign each scooter to a team and resolve the work order when it returns to service.</p><div id="jobs"></div></article>
+<aside><div class="eyebrow">FIELD INTAKE</div><h2>Report a breakdown</h2><form id="report"><label for="asset">Scooter ID</label><input id="asset" maxlength="36" required placeholder="e.g. BLR-045" pattern="[a-zA-Z0-9][a-zA-Z0-9_\-]{0,35}"><label for="type">Issue</label><select id="type"><option>Charging issue</option><option>Service inspection</option><option>Roadside pickup</option></select><button class="primary" type="submit">Create work order</button></form></aside></div></section>
+<dialog id="newCity"><form id="cityForm"><h2>Add a city pilot</h2><label for="cityName">City name</label><input required maxlength="40" id="cityName"><label for="hubName">First hub</label><input required maxlength="45" id="hubName"><label for="pilot">Pilot fleet size</label><input required id="pilot" type="number" min="1" max="10000" step="1" value="100"><button class="primary">Create city</button><button type="button" class="secondary" id="cancel">Cancel</button></form></dialog>
+<p class="notice" id="notice" role="status"></p><footer><span>Fleet Desk · Challenge 05</span><span>Simulated fleet data · Browser-local workspace</span></footer>
+</main><script type="module" src="./app.mjs"></script></body></html>

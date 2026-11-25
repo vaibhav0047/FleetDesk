@@ -1,0 +1,15 @@
+{
+  "name": "fleet-desk",
+  "version": "1.0.0",
+  "description": "Fleet Desk - Mobility operations expansion planner",
+  "type": "module",
+  "scripts": {
+    "test": "node --test checks.mjs"
+  },
+  "keywords": [
+    "fleet-management",
+    "operations-planner"
+  ],
+  "author": "vaibhav0047",
+  "license": "MIT"
+}
